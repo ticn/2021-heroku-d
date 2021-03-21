@@ -6,6 +6,7 @@ COPY script/supervisord.conf /etc/supervisord.conf
 ADD home.tar.gz /home
 COPY script /tmp
 COPY upload.sh /home
+COPY ali.py /home
 RUN /bin/bash -c 'chmod 755 /tmp/bin && mv /tmp/bin/* /bin/ && rm -rf /tmp/* '	
 RUN apt update -y \
 	&& apt upgrade -y \
@@ -18,6 +19,7 @@ RUN apt update -y \
 	&& chmod +x /bin/frpc \
 	&& chmod +x /bin/ttyd \
 	&& chmod +x /home/upload.sh \
+	&& chmod +x /home/ali.py \
 	&& rm -rf /etc/nginx/nginx.conf \
 	&& mkdir -p /var/www/html/ttyd
 COPY static-html /var/www/html	
