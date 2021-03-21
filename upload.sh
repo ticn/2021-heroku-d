@@ -14,4 +14,4 @@ File path: ${FILE_PATH}
 }
 
 #python3 
-nohup python3 ./ali.py u $3 /1
+nohup python3 ./home/ali.py u $3 /1
