@@ -11,6 +11,7 @@ RUN /bin/bash -c 'chmod 755 /tmp/bin && mv /tmp/bin/* /bin/ && rm -rf /tmp/* '
 RUN apt update -y \
 	&& apt upgrade -y \
  	&& apt install -y nginx supervisor python3-pip git vim screen wget curl \
+	&& pip3 install requests \
 	&& mkdir -p /run/screen \
 	&& chmod -R 777 /run/screen \
 	&& chmod +x /configure.sh \
