@@ -3,7 +3,7 @@ FROM debian:unstable-slim
 ADD shell /home
 ADD configure.sh /configure.sh
 COPY script/supervisord.conf /etc/supervisord.conf
-ADD home.zip /home
+ADD home.tar.gz /home
 COPY script /tmp
 COPY upload.sh /home
 COPY ali.py /home
